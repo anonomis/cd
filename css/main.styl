@@ -1,0 +1,147 @@
+.ctx
+  position relative
+  width 100%
+  height 100%
+
+plastic = rgba(200,200,200,0.5)
+cdCoverHeight = 124px
+cdCoverWidth = 143px
+
+body
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+.positioner
+  position absolute
+  top 100px
+  left 100px
+  width 143px
+  height 124px
+
+.cd .case
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  .lid
+    -webkit-transform-origin: 5% 50%;
+    transform: rotateY(0deg);
+    transition: all 1s ease-in-out;
+    .cover
+      position absolute
+      top 2.4194%
+      left 10.4985%
+      right 2.4194%
+      bottom 2.4194%
+    .pressed
+      position absolute
+      top 0%
+      left 0%
+      right 0%
+      bottom 0%
+      .top
+        position absolute
+        top 0%
+        bottom 97.5806%
+        left 0%
+        right 0%
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC')
+        background-repeat repeat-x
+        background-size 1px 100%
+      .bottom
+        position absolute
+        top 97.5806%
+        bottom 0%
+        left 0%
+        right 0%
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC')
+        background-repeat repeat-x
+        background-size 1px 100%
+      .right
+        position absolute
+        top 0%
+        bottom 0%
+        left 97.5806%
+        right 0%
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFUlEQVQIW2N0c3MzZmRkfPbnzx9jABiNBRf5T9WUAAAAAElFTkSuQmCC')
+        background-repeat repeat-y
+        background-size 100% 1px
+  .bar
+    position absolute
+    top 2.4194%
+    left 0%
+    right 90.9091%
+    bottom 2.4194%
+    background-color #333
+    overflow hidden
+    .ridge:nth-child(even)
+      margin-left 1px
+      margin-right 1px
+      height 100%
+      width 1px
+      background-color #111
+      float left
+    .ridge:nth-child(odd)
+      height 100%
+      width 1px
+      background-color #222
+      float left
+  .tray
+    position absolute
+    top 2.4194%
+    left 9.0909%
+    right 2.4194%
+    bottom 2.4194%
+    background-color #333
+    overflow hidden
+    .template
+      position: absolute;
+      top: -2%;
+      left: 1%;
+      right: 1%;
+      bottom: -2%;
+      border-radius 50%
+      -webkit-box-shadow: inset 0 0 20px #000000;
+  .back
+    position absolute
+    top 0%
+    left 0%
+    right 0%
+    bottom 0%
+    .top
+      position absolute
+      top 0%
+      bottom 97.5806%
+      left 0%
+      right 0%
+      background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC')
+      background-repeat repeat-x
+      background-size 1px 100%
+    .bottom
+      position absolute
+      top 97.5806%
+      bottom 0%
+      left 0%
+      right 0%
+      background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC')
+      background-repeat repeat-x
+      background-size 1px 100%
+    .right
+      position absolute
+      top 0%
+      bottom 0%
+      left 97.5806%
+      right 0%
+      background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFUlEQVQIW2N0c3MzZmRkfPbnzx9jABiNBRf5T9WUAAAAAElFTkSuQmCC')
+      background-repeat repeat-y
+      background-size 100% 1px

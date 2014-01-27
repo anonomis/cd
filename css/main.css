@@ -1,3 +1,9 @@
+* {
+  -webkit-transform-origin: 50% 50%;
+}
+p {
+  margin: 0;
+}
 .ctx {
   position: relative;
   width: 100%;
@@ -18,68 +24,242 @@ body {
 }
 .positioner {
   position: absolute;
-  top: 100px;
-  left: 100px;
-  width: 143px;
-  height: 124px;
 }
-.cd .case {
+.cd .disc {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  right: 1%;
+  bottom: 1%;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 50px #c7c7c7;
+}
+.cd .disc-edge-dark {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  border-radius: 50%;
+  box-shadow: inset 1px -1px 0px 0px rgba(0,0,0,0.5);
+}
+.cd .disc-edge-light {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  border-radius: 50%;
+  box-shadow: inset -1px 1px 0px 0px rgba(255,255,255,0.5);
+}
+.cd .disc-center-dark {
+  position: absolute;
+  top: 43%;
+  left: 43%;
+  right: 43%;
+  bottom: 43%;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 1px 1px rgba(109,109,109,0.5);
+}
+.cd .disc-center-light {
+  position: absolute;
+  top: 43%;
+  left: 42%;
+  right: 43%;
+  bottom: 42%;
+  border-radius: 50%;
+  box-shadow: inset 1px -1px 1px 0px rgba(255,255,255,0.5);
+}
+.cd .disc-ring {
+  position: absolute;
+  top: 36%;
+  left: 36%;
+  right: 36%;
+  bottom: 36%;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 2px 0px rgba(114,114,114,0.93);
+}
+.cd .disc-ring-light {
+  position: absolute;
+  top: 36%;
+  left: 35%;
+  right: 36%;
+  bottom: 35%;
+  border-radius: 50%;
+  box-shadow: 1px -1px 1px 0px rgba(255,255,255,0.5);
+}
+.cd .artist {
+  position: absolute;
+  top: 20px;
+  font-family: monospace;
+  font-size: 8px;
+  left: 22px;
+  right: 22px;
+  overflow: hidden;
+  bottom: 71px;
+  text-align: center;
+}
+.cd .album {
+  position: absolute;
+  top: 76px;
+  font-family: monospace;
+  font-size: 8px;
+  left: 22px;
+  right: 22px;
+  overflow: hidden;
+  bottom: 15px;
+  text-align: center;
+}
+.cd .info-right {
+  position: absolute;
+  top: 43px;
+  font-family: monospace;
+  font-size: 3px;
+  left: 82px;
+  right: 5px;
+  overflow: hidden;
+  bottom: 46px;
+  text-align: left;
+}
+.cd .info-left {
+  position: absolute;
+  top: 63px;
+  font-family: Arial;
+  font-size: 3px;
+  left: 5px;
+  right: 82px;
+  line-height: 1px;
+  overflow: hidden;
+  bottom: 46px;
+  text-align: right;
+}
+.cd .glare {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.case {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
-.cd .case .lid {
+.case .lid {
+  width: 100%;
+  height: 100%;
   -webkit-transform-origin: 5% 50%;
   transform: rotateY(0deg);
   transition: all 1s ease-in-out;
+  z-index: 1;
 }
-.cd .case .lid .cover {
+.case .lid .cover {
   position: absolute;
   top: 2.4194%;
-  left: 10.4985%;
+  left: 12.4985%;
   right: 2.4194%;
   bottom: 2.4194%;
 }
-.cd .case .lid .pressed {
+.case .lid .cover .booklet {
   position: absolute;
   top: 0%;
   left: 0%;
   right: 0%;
   bottom: 0%;
 }
-.cd .case .lid .pressed .top {
+.case .lid .cover .holders .holder {
+  position: absolute;
+  -webkit-box-shadow: inset 0 0 3px #c8c8c8;
+}
+.case .lid .cover .holders .holder:nth-child(1) {
+  top: 0%;
+  left: 8%;
+  right: 83%;
+  bottom: 96%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.case .lid .cover .holders .holder:nth-child(2) {
+  top: 0%;
+  left: 79%;
+  right: 12%;
+  bottom: 96%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.case .lid .cover .holders .holder:nth-child(3) {
+  bottom: 0%;
+  left: 79%;
+  right: 12%;
+  top: 96%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.case .lid .cover .holders .holder:nth-child(4) {
+  bottom: 0%;
+  left: 8%;
+  right: 83%;
+  top: 96%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.case .lid .pressed {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+}
+.case .lid .pressed .top {
   position: absolute;
   top: 0%;
   bottom: 97.5806%;
   left: 0%;
   right: 0%;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC");
+  -webkit-box-shadow: inset 1px 1px 1px 1px #999;
+  -moz-box-shadow: inset 1px 1px 1px 1px #999;
+  box-shadow: inset 1px 1px 1px 1px #999;
   background-repeat: repeat-x;
   background-size: 1px 100%;
 }
-.cd .case .lid .pressed .bottom {
+.case .lid .pressed .bottom {
   position: absolute;
   top: 97.5806%;
   bottom: 0%;
   left: 0%;
   right: 0%;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC");
+  -webkit-box-shadow: inset 1px 1px 1px 1px #999;
+  -moz-box-shadow: inset 1px 1px 1px 1px #999;
+  box-shadow: inset 1px 1px 1px 1px #999;
   background-repeat: repeat-x;
   background-size: 1px 100%;
 }
-.cd .case .lid .pressed .right {
+.case .lid .pressed .right {
   position: absolute;
   top: 0%;
   bottom: 0%;
   left: 97.5806%;
   right: 0%;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFUlEQVQIW2N0c3MzZmRkfPbnzx9jABiNBRf5T9WUAAAAAElFTkSuQmCC");
-  background-repeat: repeat-y;
-  background-size: 100% 1px;
+  -webkit-box-shadow: inset 1px 1px 1px 1px #999;
+  -moz-box-shadow: inset 1px 1px 1px 1px #999;
+  box-shadow: inset 1px 1px 1px 1px #999;
 }
-.cd .case .bar {
+.case .lid .pressed .overlay {
+  position: absolute;
+  top: 2.4194%;
+  left: 10.4985%;
+  right: 2.4194%;
+  bottom: 2.4194%;
+  -webkit-box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.5);
+  -moz-box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.5);
+  box-shadow: inset 0px 0px 20px 0px rgba(255,255,255,0.5);
+}
+.case .lid .pressed .overlay .glare {
+  width: 100%;
+  height: 100%;
+}
+.case .bar {
   position: absolute;
   top: 2.4194%;
   left: 0%;
@@ -88,7 +268,7 @@ body {
   background-color: #333;
   overflow: hidden;
 }
-.cd .case .bar .ridge:nth-child(even) {
+.case .bar .ridge:nth-child(even) {
   margin-left: 1px;
   margin-right: 1px;
   height: 100%;
@@ -96,13 +276,13 @@ body {
   background-color: #111;
   float: left;
 }
-.cd .case .bar .ridge:nth-child(odd) {
+.case .bar .ridge:nth-child(odd) {
   height: 100%;
   width: 1px;
   background-color: #222;
   float: left;
 }
-.cd .case .tray {
+.case .tray {
   position: absolute;
   top: 2.4194%;
   left: 9.0909%;
@@ -111,7 +291,43 @@ body {
   background-color: #333;
   overflow: hidden;
 }
-.cd .case .tray .template {
+.case .tray .holder-hole {
+  position: absolute;
+  -webkit-box-shadow: inset 0 0 3px #000;
+}
+.case .tray .holder-hole:nth-child(1) {
+  top: 0%;
+  left: 11%;
+  right: 79%;
+  bottom: 95%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.case .tray .holder-hole:nth-child(2) {
+  top: 0%;
+  left: 79%;
+  right: 11%;
+  bottom: 95%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.case .tray .holder-hole:nth-child(3) {
+  bottom: 0%;
+  left: 79%;
+  right: 11%;
+  top: 95%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.case .tray .holder-hole:nth-child(4) {
+  bottom: 0%;
+  left: 11%;
+  right: 79%;
+  top: 95%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.case .tray .template {
   position: absolute;
   top: -2%;
   left: 1%;
@@ -120,40 +336,87 @@ body {
   border-radius: 50%;
   -webkit-box-shadow: inset 0 0 20px #000;
 }
-.cd .case .back {
+.case .tray .nob {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  right: 39%;
+  bottom: 40%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 20px #000;
+}
+.case .tray .nob p {
+  font-size: 250%;
+  margin: 0;
+  color: #aaa;
+  margin-left: 23%;
+  line-height: 37px;
+}
+.case .tray .nob .hole {
+  position: absolute;
+  top: 46%;
+  left: 20%;
+  right: 20%;
+  bottom: 46%;
+  background-color: #aaa;
+  border-radius: 2px;
+  transform-origin: 50% 50%;
+}
+.case .tray .nob .hole:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+}
+.case .tray .nob .hole:nth-child(3) {
+  -webkit-transform: rotate(90deg);
+}
+.case .tray .nob .hole:nth-child(4) {
+  -webkit-transform: rotate(135deg);
+}
+.case .tray .nob .hole:nth-child(5) {
+  -webkit-transform: rotate(180deg);
+}
+.case .tray .nob .hole:nth-child(6) {
+  -webkit-transform: rotate(225deg);
+}
+.case .tray .nob .hole:nth-child(7) {
+  -webkit-transform: rotate(270deg);
+}
+.case .tray .nob .hole:nth-child(8) {
+  -webkit-transform: rotate(315deg);
+}
+.case .back {
   position: absolute;
   top: 0%;
   left: 0%;
   right: 0%;
   bottom: 0%;
 }
-.cd .case .back .top {
+.case .back .top {
   position: absolute;
   top: 0%;
   bottom: 97.5806%;
-  left: 0%;
+  left: 10.4985%;
   right: 0%;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC");
-  background-repeat: repeat-x;
-  background-size: 1px 100%;
+  -webkit-box-shadow: inset 1px 1px 1px 1px #999;
+  -moz-box-shadow: inset 1px 1px 1px 1px #999;
+  box-shadow: inset 1px 1px 1px 1px #999;
 }
-.cd .case .back .bottom {
+.case .back .bottom {
   position: absolute;
   top: 97.5806%;
   bottom: 0%;
-  left: 0%;
+  left: 10.4985%;
   right: 0%;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAGElEQVQIW2N8+PBhGuPbt29nMq5YsWImAEclCP4yWfYLAAAAAElFTkSuQmCC");
-  background-repeat: repeat-x;
-  background-size: 1px 100%;
+  -webkit-box-shadow: inset 1px 1px 1px 1px #999;
+  -moz-box-shadow: inset 1px 1px 1px 1px #999;
+  box-shadow: inset 1px 1px 1px 1px #999;
 }
-.cd .case .back .right {
+.case .back .right {
   position: absolute;
   top: 0%;
   bottom: 0%;
   left: 97.5806%;
   right: 0%;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFUlEQVQIW2N0c3MzZmRkfPbnzx9jABiNBRf5T9WUAAAAAElFTkSuQmCC");
-  background-repeat: repeat-y;
-  background-size: 100% 1px;
+  -webkit-box-shadow: inset 1px 1px 1px 1px #999;
+  -moz-box-shadow: inset 1px 1px 1px 1px #999;
+  box-shadow: inset 1px 1px 1px 1px #999;
 }

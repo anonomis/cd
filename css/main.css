@@ -1,5 +1,6 @@
 * {
   -webkit-transform-origin: 50% 50%;
+  -webkit-backface-visibility: hidden;
 }
 p {
   margin: 0;
@@ -24,6 +25,7 @@ body {
 }
 .positioner {
   position: absolute;
+  -webkit-backface-visibility: hidden;
 }
 .cd .disc {
   position: absolute;
@@ -138,6 +140,9 @@ body {
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
+}
+.case.closed .lid {
+  transform: rotateY(180deg);
 }
 .case {
   position: absolute;
@@ -336,51 +341,72 @@ body {
   border-radius: 50%;
   -webkit-box-shadow: inset 0 0 20px #000;
 }
-.case .tray .nob {
+.case .tray .template .cdHere {
   position: absolute;
-  top: 40%;
-  left: 40%;
-  right: 39%;
-  bottom: 40%;
+  top: 1px;
+  left: 2px;
+}
+.case .tray .template .nob-shadow {
+  position: absolute;
+  top: 43%;
+  left: 43%;
+  right: 43%;
+  bottom: 43%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 8px #000;
+}
+.case .tray .template .nob {
+  position: absolute;
+  top: 38%;
+  left: 38%;
+  right: 38%;
+  bottom: 38%;
   border-radius: 50%;
   -webkit-box-shadow: 0 0 20px #000;
 }
-.case .tray .nob p {
+.case .tray .template .nob .slot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+}
+.case .tray .template .nob p {
   font-size: 250%;
   margin: 0;
   color: #aaa;
   margin-left: 23%;
   line-height: 37px;
 }
-.case .tray .nob .hole {
+.case .tray .template .nob .hole {
   position: absolute;
   top: 46%;
-  left: 20%;
-  right: 20%;
+  left: 17%;
+  right: 17%;
   bottom: 46%;
   background-color: #aaa;
   border-radius: 2px;
   transform-origin: 50% 50%;
 }
-.case .tray .nob .hole:nth-child(2) {
+.case .tray .template .nob .hole:nth-child(2) {
   -webkit-transform: rotate(45deg);
 }
-.case .tray .nob .hole:nth-child(3) {
+.case .tray .template .nob .hole:nth-child(3) {
   -webkit-transform: rotate(90deg);
 }
-.case .tray .nob .hole:nth-child(4) {
+.case .tray .template .nob .hole:nth-child(4) {
   -webkit-transform: rotate(135deg);
 }
-.case .tray .nob .hole:nth-child(5) {
+.case .tray .template .nob .hole:nth-child(5) {
   -webkit-transform: rotate(180deg);
 }
-.case .tray .nob .hole:nth-child(6) {
+.case .tray .template .nob .hole:nth-child(6) {
   -webkit-transform: rotate(225deg);
 }
-.case .tray .nob .hole:nth-child(7) {
+.case .tray .template .nob .hole:nth-child(7) {
   -webkit-transform: rotate(270deg);
 }
-.case .tray .nob .hole:nth-child(8) {
+.case .tray .template .nob .hole:nth-child(8) {
   -webkit-transform: rotate(315deg);
 }
 .case .back {

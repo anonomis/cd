@@ -1,3 +1,101 @@
+window.template =
+  album: (ctx) -> """
+         <div class="positioner" id="#{ctx.id}" rotation="0">
+         <div class="ctx">
+         <div class="case">
+         <div class="ctx">
+         <div class="back">
+         <div class="ctx">
+         <div class="top"></div>
+         <div class="right"></div>
+         <div class="bottom"></div>
+         </div>
+         </div>
+         <div class="bar">
+         <div class="ctx">
+         <div class="ridge"></div>
+         <div class="ridge"></div>
+         <div class="ridge"></div>
+         <div class="ridge"></div>
+         <div class="ridge"></div>
+         <div class="ridge"></div>
+         <div class="ridge"></div>
+         <div class="ridge"></div>
+         </div>
+         </div>
+         <div class="tray">
+         <div class='ctx'>
+         <div class="holder-hole"></div>
+         <div class="holder-hole"></div>
+         <div class="holder-hole"></div>
+         <div class="holder-hole"></div>
+         <div class="template">
+         <div class="ctx">
+         <div class="cdHere"></div>
+         <div class="nob-shadow"></div>
+         <div class="nob">
+         <div class="ctx">
+         <div class="slot" snapMgr="#{ctx.id}" accepted="cd"></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         <div class='hole'></div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         <div class="lid">
+         <div class="cover">
+         <div class="ctx">
+         <div class="holders">
+         <div class="holder"></div>
+         <div class="holder"></div>
+         <div class="holder"></div>
+         <div class="holder"></div>
+         </div>
+         <div class="booklet mock no#{ctx.mockNo}"></div>
+         </div>
+         </div>
+         <div class="pressed">
+         <div class='ctx'>
+         <div class="top"></div>
+         <div class="right"></div>
+         <div class="left"></div>
+         <div class="bottom"></div>
+         <div class="overlay">
+         <div class="glare">
+         <div class="ctx">
+         <svg height="100%" width="100%">
+         <polygon points="-1000,-1000 0,-1000 0,0 1000,1000 0,1000 0,0 -1000,1000 0,1000 0,0 1000,-1000 0,-1000 0,0 " style="fill:rgba(255,255,255,0.2);" />
+         </svg>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         """
+
+dist = (p1x,p1y,p2x,p2y) ->
+  xs = p1x - p2x
+  xs = xs * xs
+  ys = p1y - p2y
+  ys = ys * ys
+  return Math.sqrt( xs + ys )
+
+
 blockContextMenu = (evt) ->
   evt.preventDefault()
 
@@ -38,150 +136,64 @@ window.idIterator = 0
 window.makeId = () ->
   return window.idIterator++
 
-class Album
-  constructor: (mockNo)->
-    @state = "closed"
-    @id = "album-" + makeId()
-    j("body").append """
-      <div class="positioner" id="#{@id}" rotation="0">
-        <div class="ctx">
-            <div class="case">
-              <div class="ctx">
-                <div class="back">
-                  <div class="ctx">
-                    <div class="top"></div>
-                    <div class="right"></div>
-                    <div class="bottom"></div>
-                  </div>
-                </div>
-                <div class="bar">
-                  <div class="ctx">
-                  <div class="ridge"></div>
-                  <div class="ridge"></div>
-                  <div class="ridge"></div>
-                  <div class="ridge"></div>
-                  <div class="ridge"></div>
-                  <div class="ridge"></div>
-                  <div class="ridge"></div>
-                  <div class="ridge"></div>
-                  </div>
-                </div>
-                <div class="tray">
-                  <div class='ctx'>
-                    <div class="holder-hole"></div>
-                    <div class="holder-hole"></div>
-                    <div class="holder-hole"></div>
-                    <div class="holder-hole"></div>
-                    <div class="template">
-                      <div class="ctx">
-                        <div class="nob">
-                          <div class="ctx">
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                             <div class='hole'></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="lid">
-                  <div class="cover">
-                    <div class="ctx">
-                      <div class="holders">
-                        <div class="holder"></div>
-                        <div class="holder"></div>
-                        <div class="holder"></div>
-                        <div class="holder"></div>
-                      </div>
-                      <div class="booklet mock no#{mockNo}"></div>
-                    </div>
-                  </div>
-                  <div class="pressed">
-                    <div class='ctx'>
-                    <div class="top"></div>
-                    <div class="right"></div>
-                    <div class="left"></div>
-                    <div class="bottom"></div>
-                    <div class="overlay">
-                      <div class="glare">
-                      <div class="ctx">
-                      <svg height="100%" width="100%">
-                        <polygon points="-1000,-1000 0,-1000 0,0 1000,1000 0,1000 0,0 -1000,1000 0,1000 0,0 1000,-1000 0,-1000 0,0 " style="fill:rgba(255,255,255,0.2);" />
-                      </svg>
-                      </div>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-      </div>
-    """
-    x = Math.random() * 700
-    y = Math.random() * 700
-    @elem().css
-      top: "#{x}px"
-      left: "#{y}px"
-      width: "143px"
-      height: "124px"
-    @elem().mousedown (e) => @mousedown(e)
+window.zIndexIterator = 0
+window.nextZ = () ->
+  return window.idIterator++
 
+moduleKeywords = ['included', 'extended']
+
+window.stuff = {}
+
+class SuperClass
+  constructor: () ->
+    console.log "id" + @id
+    window.stuff[@id] = this
+
+  @include: (obj) ->
+    throw('include(obj) requires obj') unless obj
+    for key, value of obj.prototype when key not in moduleKeywords
+      @::[key] = value
+
+    included = obj.included
+    included.apply(this) if included
+    @
+
+class Movable
+  initMovable: () ->
+    @elem().mousedown (e) => @mousedown(e)
 
   mousedown: (e) ->
     console.log event.button
     if event.button is 2
-      eventRouter.bind "mousemove", @rotateAlbum(), this
+      eventRouter.bind "mousemove", @rotate(), this
       eventRouter.bind "mouseup", (e) ->
         console.log "mouseup"
         eventRouter.unbind "mousemove"
     else if event.button is 0
-      eventRouter.bind "mousemove", @moveAlbum(e), this
-      eventRouter.bind "mouseup", (e) ->
+      eventRouter.bind "mousemove", @move(e), this
+      eventRouter.bind "mouseup", (e) =>
         console.log "mouseup"
+        @_mouseup?()
         eventRouter.unbind "mousemove"
     else
-      if @state is "closed"
-        @elem().find(".lid").css { transform: "rotateY(180deg)"}
-        @state = "opening"
-        state = =>
-          @state = "open"
-        swap = =>
-          @elem().find(".cover").before(@elem().find(".pressed"))
-          @elem().find(".holders").before(@elem().find(".booklet"))
-        setTimeout(state, 1000)
-        setTimeout(swap, 500)
-      if @state is "open"
-        @elem().find(".lid").css { transform: "rotateY(0deg)"}
-        @state = "closing"
-        state = =>
-          @state = "closed"
-        swap = =>
-          @elem().find(".pressed").before(@elem().find(".cover"))
-          @elem().find(".booklet").before(@elem().find(".holders"))
-        setTimeout(state, 1000)
-        setTimeout(swap, 500)
+      @_mousedown(e)
 
-  moveAlbum: (ev) ->
+  move: (ev) ->
+    @_initMove?(ev)
     posX = @elem().offset().left
     posY = @elem().offset().top
     startX = ev.pageX
     startY = ev.pageY
+    @elem().css
+      "z-index": window.nextZ()
     (e) ->
-      @elem().css
+      regularMove =
         top: (posY + (e.pageY - startY)) + "px"
-        left: (posX+ (e.pageX - startX)) + "px"
+        left: (posX + (e.pageX - startX)) + "px"
+      unless @_move?(e, regularMove)?
+        @elem().css regularMove
 
-  rotateAlbum: () ->
+  rotate: () ->
     centerX = @elem().offset().left + (@elem().width() / 2)
     centerY = @elem().offset().top + (@elem().height() / 2)
     if @elem().attr("rotation")?
@@ -196,20 +208,83 @@ class Album
       else
         ang = (Math.atan2(deltaY, deltaX) * 180 / Math.PI) + 90
       console.log ev.pageY, ev.pageX, ang
-      @elem().css
-        "transform": "rotate(#{ang}deg)"
-      glareAng = ang*2
-      @elem().find("polygon").css
-        "transform": "rotate(#{glareAng}deg)"
-      @elem().attr "rotation", ang
+      @setRotation(ang)
+
+class Album extends SuperClass
+
+  @include Movable
+
+  constructor: (mockNo, x, y)->
+    @state = "closed"
+    @id = "album-" + makeId()
+    super()
+    j("body").append template.album
+      id: @id
+      mockNo: mockNo
+    x = Math.random() * 700 unless x?
+    y = Math.random() * 700 unless y?
+    @elem().css
+      top: "#{x}px"
+      left: "#{y}px"
+      width: "143px"
+      height: "124px"
+    #@elem().mousedown (e) => @mousedown(e)
+    @initMovable()
+    super()
+
+  _mousedown: (event) ->
+    console.log event
+    if event.button is 1
+      if @state is "closed"
+        @elem().addClass("closed")
+        @state = "opening"
+        state = =>
+          @state = "open"
+        swap = =>
+          @elem().find(".cover").before(@elem().find(".pressed"))
+          @elem().find(".holders").before(@elem().find(".booklet"))
+        setTimeout(state, 1000)
+        setTimeout(swap, 500)
+      if @state is "open"
+        @elem().removeClass("closed")
+        @state = "closing"
+        state = =>
+          @state = "closed"
+        swap = =>
+          @elem().find(".pressed").before(@elem().find(".cover"))
+          @elem().find(".booklet").before(@elem().find(".holders"))
+        setTimeout(state, 1000)
+        setTimeout(swap, 500)
+
+  setRotation: (ang) ->
+    @elem().css
+      "transform": "rotate(#{ang}deg)"
+    glareAng = ang * 2
+    @elem().find("polygon").css
+      "transform": "rotate(#{glareAng}deg)"
+    @elem().attr "rotation", ang
+    invAng = -ang
+    @elem(".inv-rot").css
+      "transform": "rotate(#{invAng}deg)"
+
+  merge: (thing) ->
+    caseRot = parseInt(@elem().attr("rotation"))
+    rotation = parseInt(thing.elem().attr("rotation")) - caseRot
+    thing.setRotation(rotation)
+    @elem(".cdHere").append(thing.elem())
+    @setRotation(parseInt(caseRot))
 
   elem: (selector) ->
     return j("##{@id}") unless selector?
-    return j("##{@id}").find(selector).first()
+    return j("##{@id}").find(selector)
 
-class Disc
+class Disc extends SuperClass
+
+  @include Movable
+
   constructor: ->
     @id = "disc-" + makeId()
+    super()
     j("body").append """
       <div class="positioner cd" id="#{@id}" rotation="0">
         <div class="ctx">
@@ -224,19 +299,12 @@ class Disc
           </p>
           <p class="info-left">
           </p>
-          <div class="disc-edge-light"></div>
-          <div class="disc-edge-dark"></div>
+          <div class="disc-edge-light inv-rot"></div>
+          <div class="disc-edge-dark inv-rot"></div>
           <div class="disc-ring"></div>
-          <div class="disc-ring-light"></div>
-          <div class="disc-center-light"></div>
-          <div class="disc-center-dark"></div>
-          <div class="glare">
-          <div class="ctx">
-          <svg height="100%" width="100%">
-              <polygon points="-1000,-1000 1000,1000 -1000,1000 1000,-1000 -1000,-1000" style="fill:rgba(255,255,255,0.2);" />
-          </svg>
-          </div>
-          </div>
+          <div class="disc-ring-light inv-rot"></div>
+          <div class="disc-center-light inv-rot"></div>
+          <div class="disc-center-dark inv-rot"></div>
         </div>
       </div>
     """
@@ -263,12 +331,63 @@ class Disc
     @elem().css
       width: "120px"
       height: "120px"
+    @initMovable()
+
+  _initMove: (e) ->
+    @slots = []
+    for slot in j(".slot")
+      @slots.push
+        slot: slot
+        x: parseInt j(slot).offset().left
+        y: parseInt j(slot).offset().top
+
+  snap: (e) ->
+    snap = null
+    shortest = Number.MAX_VALUE
+    for v in @slots
+      distance = dist(e.pageX, e.pageY, v.x, v.y)
+      console.log distance
+      if distance < 100 and distance < shortest
+        snap = v
+    return snap
+
+  _move: (e) ->
+    snap = @snap(e)
+    if snap?
+      props =
+        top: (snap.y - (@elem().height() / 2)) + "px"
+        left: (snap.x - (@elem().width() / 2)) + "px"
+      @elem().css props
+      @snappedTo = j(snap.slot).attr "snapMgr"
+      return true
+    else
+      return null
+
+  _mouseup: () ->
+    if @snappedTo?
+      console.log "merging", @snappedTo
+      window.stuff[@snappedTo].merge(this)
+      @elem().css
+        top: "0"
+        left: "0"
+
+  setRotation: (ang) ->
+    @elem().css
+      "transform": "rotate(#{ang}deg)"
+    invAng = -ang
+    @elem(".inv-rot").css
+      "transform": "rotate(#{invAng}deg)"
+    @elem().attr "rotation", ang
+    #glareAng = ang * 2
+    #@elem().find("polygon").css
+    #  "transform": "rotate(#{glareAng}deg)"
+    #@elem().attr "rotation", ang
 
   elem: (selector) ->
     return j("##{@id}") unless selector?
-    return j("##{@id}").find(selector).first()
+    return j("##{@id}").find(selector)
 
 new Album(1)
 new Album(2)
-new Album(3)
 new Disc(2)
+new Album(3, 150, 150)
